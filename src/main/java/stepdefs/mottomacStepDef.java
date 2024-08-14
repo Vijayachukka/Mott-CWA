@@ -60,6 +60,7 @@ public class mottomacStepDef
     @And("^Scroll to the Transformation \"([^\"]*)\" section$")
     public void scrollToTheTransformationSection(String section) {
         digitalServicesFunctions.scrollToChangeSection(section);
+
     }
 
     @When("^click on the Transformation \"([^\"]*)\" section$")

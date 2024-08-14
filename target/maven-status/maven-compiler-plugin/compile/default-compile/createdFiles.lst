@@ -1,4 +1,3 @@
 MottamcPages\LoginPage.class
 stepdefs\mottomacStepDef.class
-org\example\Main.class
 MottamcPages\DigitalWindow\digitalServicesFunctions.class

@@ -1,6 +1,6 @@
-@motto
+@regressionpack
 Feature: Test to Navigate to Mottomac Homepage and verify the details
-  @login
+  @smoketest
   Scenario: Test to Navigate to Mottomac Home page and verify the details
     Given Open the Mottomac website
     And Accept the cookies

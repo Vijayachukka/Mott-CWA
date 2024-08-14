@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="161.89" tests="2" skipped="0" failures="0" errors="0">
-<testcase classname="Test to Navigate to Mottomac Homepage and verify the details" name="Test to Navigate to Mottomac Home page and verify the details" time="130.147">
+<testsuite name="Cucumber" time="50.826" tests="2" skipped="0" failures="0" errors="0">
+<testcase classname="Test to Navigate to Mottomac Homepage and verify the details" name="Test to Navigate to Mottomac Home page and verify the details" time="16.499">
 <system-out><![CDATA[
 Given Open the Mottomac website.............................................passed
 And Accept the cookies......................................................passed
@@ -8,7 +8,7 @@ When Click on the Mott Homepage.............................................pass
 Then HomePage is displayed..................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Test to Navigate to Mottomac Homepage and verify the details" name="Test to submit the details in Transformation-Change page and verify the details" time="31.577">
+<testcase classname="Test to Navigate to Mottomac Homepage and verify the details" name="Test to submit the details in Transformation-Change page and verify the details" time="34.02">
 <system-out><![CDATA[
 Given Open the Mottomac website.............................................passed
 When Click on the Mott Homepage.............................................passed

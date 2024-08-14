@@ -14,11 +14,13 @@ public class digitalServicesFunctions extends LoginPage
     {
         waitTime().until( ExpectedConditions.elementToBeClickable(By.xpath("//a[@aria-label='"+sectionName+"']")) );
         driver.findElement(By.xpath("//a[@aria-label='"+sectionName+"']")).click();
+        writeScenarioEvidence("Navigated to "+sectionName+" section successfully");
     }
     public void navigateToSubServices(String subSection)
     {
         waitTime().until( ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='js-digital-sub-menu']//a[@data-title='"+subSection+"']")) );
         driver.findElement(By.xpath("//div[@class='js-digital-sub-menu']//a[@data-title='"+subSection+"']")).click();
+        writeScenarioEvidence("Navigated to "+subSection+" section successfully");
 
     }
     public void scrollToChangeSection(String section)
@@ -26,6 +28,7 @@ public class digitalServicesFunctions extends LoginPage
         JavascriptExecutor executor = ((JavascriptExecutor) driver);
         WebElement changeSection = driver.findElement(By.xpath("//h3[contains(text(),'Operating model')]"));
         executor.executeScript("arguments[0].scrollIntoView(true);",changeSection);
+        writeScenarioEvidence("Navigated to "+section+" successfully");
     }
     public void clickOnChangeSection(String section)
     {
@@ -33,24 +36,28 @@ public class digitalServicesFunctions extends LoginPage
         waitTime().until( ExpectedConditions.elementToBeClickable(changeSection));
         changeSection.click();
         waitTime().until( ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='Find out more']")));
+        writeScenarioEvidence("clicked on "+section+" successfully");
     }
     public void inputFirstName(String name)
     {
         WebElement firstName= driver.findElement(By.id("firstname*52"));
         waitTime().until( ExpectedConditions.elementToBeClickable(firstName));
         firstName.sendKeys(name);
+        writeScenarioEvidence("Entered first name is:"+name);
     }
     public void inputSurname(String name)
     {
         WebElement surName= driver.findElement(By.id("surname*52"));
         waitTime().until( ExpectedConditions.elementToBeClickable(surName));
         surName.sendKeys(name);
+        writeScenarioEvidence("Entered Surname is:"+name);
     }
     public void inputEmail(String email)
     {
         WebElement emailTextBox= driver.findElement(By.id("email*52"));
         waitTime().until( ExpectedConditions.elementToBeClickable(emailTextBox));
         emailTextBox.sendKeys(email);
+        writeScenarioEvidence("Entered email is:"+email);
     }
     public void selectServices(String value)
     {
@@ -62,6 +69,7 @@ public class digitalServicesFunctions extends LoginPage
         WebElement valuesCheckbox= driver.findElement(By.xpath("//div[@class='multiselect-list active']//span[text()='"+value+"']"));
         valuesCheckbox.click();
         servicesDropDown.click();
+        writeScenarioEvidence("Selected service value from drop down is:"+value);
     }
     public void clickSendButton()
     {

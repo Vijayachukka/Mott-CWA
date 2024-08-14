@@ -1,5 +1,6 @@
 package MottamcPages;
 
+import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -10,13 +11,17 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 
 public class LoginPage
 {
     public static WebDriver driver;
+    public static Scenario scenario;
     static final String  mottoUrl="https://www.mottmac.com/";
+    static final Logger log = LoggerFactory.getLogger(LoginPage.class);
 
     public void OpenBrowser()
     {
@@ -38,6 +43,14 @@ public class LoginPage
         driver=new ChromeDriver(options);
         driver.manage().window().maximize();
     }
+
+    public void beforeStep(Scenario scenario) {
+        this.scenario = scenario;
+    }
+    public Scenario getScenario()
+    {
+        return scenario;
+    }
     public void launchMottoWebsite()
     {
         OpenBrowser();
@@ -55,6 +68,19 @@ public class LoginPage
     public void verifyTitleOfHomePage()
     {
         Assert.assertEquals("Title of the home page is: ","Global engineering, management and development consultants - Mott MacDonald",driver.getTitle());
+        writeScenarioEvidence("Title of Home Page is :"+driver.getTitle());
+
+    }
+    public  void writeScenarioEvidence(String message)
+    {
+        try
+        {
+            getScenario().log(message);
+        }
+        catch (NullPointerException e)
+        {
+            log.info(message);
+        }
     }
     public WebDriverWait waitTime()
     {
@@ -74,8 +100,6 @@ public class LoginPage
         {
             System.out.println("Default language is already selected");
         }
-
-
 
     }
     public void closeBrowser()
