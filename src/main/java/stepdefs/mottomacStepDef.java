@@ -3,6 +3,8 @@ package stepdefs;
 import MottamcPages.DigitalWindow.digitalServicesFunctions;
 import MottamcPages.LoginPage;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -99,5 +101,11 @@ public class mottomacStepDef
     @Then("^Form should be submitted successfully$")
     public void formShouldBeSubmittedSuccessfully() throws InterruptedException {
         digitalServicesFunctions.verifySubmitMessage();
+    }
+    @Before
+    public void setScenarioName(Scenario scenarioName)
+    {
+        loginPage.setScenario(scenarioName);
+
     }
 }

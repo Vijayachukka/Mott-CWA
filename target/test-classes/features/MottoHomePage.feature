@@ -21,5 +21,4 @@ Feature: Test to Navigate to Mottomac Homepage and verify the details
     And Enter the Email address as "Vijayachukka@gmail.com"
     And Select the Service as "Select all" from dropdown list
     When click on the Send now button
-   Then Form should be submitted successfully
-
+    Then Form should be submitted successfully

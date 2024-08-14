@@ -44,7 +44,7 @@ public class LoginPage
         driver.manage().window().maximize();
     }
 
-    public void beforeStep(Scenario scenario) {
+    public void setScenario(Scenario scenario) {
         this.scenario = scenario;
     }
     public Scenario getScenario()
