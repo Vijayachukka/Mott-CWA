@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         "junit:target/cucumber.xml"},
         features = {"src/test/resources/features"},
         glue = {"stepdefs"},
-        tags = "@login",
+        tags = "@motto",
         monochrome = true)
 public class mottoTestRunner
 {

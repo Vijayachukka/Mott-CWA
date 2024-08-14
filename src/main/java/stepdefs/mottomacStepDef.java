@@ -1,5 +1,6 @@
 package stepdefs;
 
+import MottamcPages.DigitalWindow.digitalServicesFunctions;
 import MottamcPages.LoginPage;
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
@@ -10,6 +11,7 @@ import io.cucumber.java.en.When;
 public class mottomacStepDef
 {
     private LoginPage loginPage=new LoginPage();
+    private digitalServicesFunctions digitalServicesFunctions=new digitalServicesFunctions();
 
 
     @Given("^Open the Mottomac website$")
@@ -40,5 +42,61 @@ public class mottomacStepDef
     public void homepageIsDisplayed()
     {
         loginPage.verifyTitleOfHomePage();
+    }
+
+    @Given("^Click on the \"([^\"]*)\" section$")
+    public void clickOnTheDigitalSection(String sectionName)
+    {
+        digitalServicesFunctions.navigateToSection(sectionName);
+
+    }
+
+    @And("^Click on the \"([^\"]*)\" link$")
+    public void clickOnTheSubLink(String subSection)
+    {
+        digitalServicesFunctions.navigateToSubServices(subSection);
+    }
+
+    @And("^Scroll to the Transformation \"([^\"]*)\" section$")
+    public void scrollToTheTransformationSection(String section) {
+        digitalServicesFunctions.scrollToChangeSection(section);
+    }
+
+    @When("^click on the Transformation \"([^\"]*)\" section$")
+    public void clickOnTheTransformationSection(String section) {
+        digitalServicesFunctions.clickOnChangeSection(section);
+    }
+
+    @And("^Enter the first name as \"([^\"]*)\"$")
+    public void enterTheFirstNameAs(String name)
+    {
+        digitalServicesFunctions.inputFirstName(name);
+    }
+
+    @And("^Enter the Surname as \"([^\"]*)\"$")
+    public void enterTheSurnameAs(String name) {
+        digitalServicesFunctions.inputSurname(name);
+    }
+
+    @And("^Enter the Email address as \"([^\"]*)\"$")
+    public void enterTheEmailAddressAs(String email) {
+        digitalServicesFunctions.inputEmail(email);
+    }
+
+    @And("^Select the Service as \"([^\"]*)\" from dropdown list$")
+    public void selectTheServiceAsFromDropdownList(String value)
+    {
+        digitalServicesFunctions.selectServices(value);
+
+    }
+    @When("click on the Send now button")
+    public void clickOnTheSendNowButton()
+    {
+        digitalServicesFunctions.clickSendButton();
+    }
+
+    @Then("^Form should be submitted successfully$")
+    public void formShouldBeSubmittedSuccessfully() throws InterruptedException {
+        digitalServicesFunctions.verifySubmitMessage();
     }
 }

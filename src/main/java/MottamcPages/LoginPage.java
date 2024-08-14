@@ -78,7 +78,7 @@ public class LoginPage
     public void selectLanguage()
     {
         WebElement language = driver.findElement(By.xpath("//a[text()='Global (English)']"));
-        waitTime().until( ExpectedConditions.presenceOfElementLocated(By.xpath("//a[text()='Global (English)']")) );
+        waitTime().until( ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Global (English)']")) );
         language.click();
 
     }

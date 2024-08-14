@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="16.549" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="" name="Test to Navigate to Mottomac Home page and verify the details" time="16.283">
+<testsuite name="Cucumber" time="46.858" tests="2" skipped="0" failures="0" errors="0">
+<testcase classname="Test to Navigate to Mottomac Homepage and verify the details" name="Test to Navigate to Mottomac Home page and verify the details" time="9.926">
 <system-out><![CDATA[
 Given Open the Mottomac website.............................................passed
 And Accept the cookies......................................................passed
 When Click on the Mott Homepage.............................................passed
 Then HomePage is displayed..................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Test to Navigate to Mottomac Homepage and verify the details" name="Test to submit the details in Transformation page and verify the message" time="36.726">
+<system-out><![CDATA[
+Given Open the Mottomac website.............................................passed
+When Click on the Mott Homepage.............................................passed
+Then HomePage is displayed..................................................passed
+Given Click on the "Digital" section........................................passed
+And Click on the "Services" link............................................passed
+And Scroll to the Transformation "Change" section...........................passed
+When click on the Transformation "Change" section...........................passed
+And Enter the first name as "Vijay".........................................passed
+And Enter the Surname as "Chukka"...........................................passed
+And Enter the Email address as "Vijayachukka@gmail.com".....................passed
+And Select the Service as "Select all" from dropdown list...................passed
+When click on the Send now button...........................................passed
+Then Form should be submitted successfully..................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
