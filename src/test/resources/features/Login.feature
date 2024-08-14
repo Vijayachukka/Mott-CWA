@@ -8,7 +8,7 @@ Feature: Test to Navigate to Mottomac Homepage and verify the details
     Then HomePage is displayed
 
     @loadPage
-  Scenario: Test to submit the details in Transformation page and verify the message
+  Scenario: Test to submit the details in Transformation-Change page and verify the details
     Given Open the Mottomac website
     When Click on the Mott Homepage
     Then HomePage is displayed

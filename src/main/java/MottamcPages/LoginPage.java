@@ -37,19 +37,6 @@ public class LoginPage
         WebDriverManager.chromedriver().clearDriverCache().setup();
         driver=new ChromeDriver(options);
         driver.manage().window().maximize();
-        //System.out.println(driver.findElement(By.xpath("//div[@class='copyright j-show-footer']")).getText());
-
-
-        //a[@aria-label='Digital']
-        //div[@class='js-digital-sub-menu']//a[@data-title='Services']
-        //h3[contains(text(),'Change')]
-        //input[@id='firstname*52']
-        //input[@id='surname*52']
-        //input[@id='email*52']
-        //input[@class='multiselect-input' and @placeholder='Service*']
-        //*[@id="f68d"]
-        //*[@id="f68d"]
-        //*[@id="message_f68d"]
     }
     public void launchMottoWebsite()
     {
@@ -78,8 +65,17 @@ public class LoginPage
     public void selectLanguage()
     {
         WebElement language = driver.findElement(By.xpath("//a[text()='Global (English)']"));
-        waitTime().until( ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Global (English)']")) );
-        language.click();
+        try
+        {
+            waitTime().until( ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Global (English)']")) );
+            language.click();
+        }
+        catch(Exception e)
+        {
+            System.out.println("Default language is already selected");
+        }
+
+
 
     }
     public void closeBrowser()
