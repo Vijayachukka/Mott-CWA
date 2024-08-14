@@ -85,7 +85,7 @@ public class digitalServicesFunctions extends LoginPage
         }
 
     }
-    public void verifySubmitMessage() throws InterruptedException {
+    public void verifySubmitMessage() {
         waitTime().until( ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='confirmation-message' and text()='Thank you.']")));
         WebElement msg= driver.findElement(By.xpath("//div[@class='confirmation-message' and text()='Thank you.']"));
         //wait(100);
